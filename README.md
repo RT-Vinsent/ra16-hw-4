@@ -1,46 +1,138 @@
-# Getting Started with Create React App
+## **`!РЕШЕНО! Работа с формами. Все задачи`**  
+### Задачи разделены по компонентам в папке components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### Ссылкка на [github-pages](https://rt-vinsent.github.io/ra16-hw-4/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+[![Build status](https://ci.appveyor.com/api/projects/status/lnpxsh0sjl6hfpti?svg=true)](https://ci.appveyor.com/project/RT-Vinsent/ra16-hw-4)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![pages-build-deployment](https://github.com/RT-Vinsent/ra16-hw-4/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/RT-Vinsent/ra16-hw-4/actions/workflows/pages/pages-build-deployment)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+Работа с формами
+===
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Необходимо выполнить и предоставить на проверку следующие задачи:
 
-### `npm run build`
+<details>
+<summary>1. Конвертер цветов</summary>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Конвертер цветов из HEX в RGB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Вам необходимо разработать конвертер цветов из HEX в RGB.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Конвертер цветов](./assets/preview.png)
 
-### `npm run eject`
+## Интерфейс конвертера
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+При правильном вводе цвета он показывает его представление в формате RGB и меняет цвет фона на заданный:
+![Цвет](./assets/color.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Конвертер при вводе неправильного цвета в формате HEX должен сообщать об ошибке:
+![Ошибка](./assets/error.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Необходимо дожидаться ввода всех семи символов, включая решётку, чтобы принимать решение о том, показывать ошибку или менять цвет фона.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+</details>
 
-## Learn More
+<details>
+<summary>2. Учёт тренировок</summary>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Учёт тренировок
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Вы решили реализовать небольшое приложение, которое хранит данные о тренировках и прогулках, которые вы совершаете в течение недели.
+
+Общий интерфейс должен выглядеть следующим образом:
+
+![Steps](./assets/steps.png)
+
+## Добавление данных
+
+У вас должна быть форма ввода, в которую вводится дата и количество пройденных километров. Новые значения добавляются в таблицу при отправке формы.
+
+_Особенности добавления_:
+1. Новые значения добавляются не в конец, а согласно сортировке по дате, то есть если мы добавим 21.07.2019, то значение встанет на первую позицию, согласно скриншоту, а если 17.07.2019 — то на последнюю.
+2. Если мы добавляем значения, указывая уже существующую дату, то значения суммируются с теми, что хранятся в таблице, например, если добавить 20.07.2019 и 10 км, то для даты 20.07.2019 будет отображаться 15.7 км.
+
+## Удаление данных
+
+С помощью иконки ✘ должна быть возможность удалить строку. Удаляется вся строка целиком и данные, связанные с ней.
+
+## Редактирование данных
+
+Дополнительное, необязательное задание: вы можете реализовать кнопку редактирования ✎, при нажатии на которую происходит перенос данных в форму ввода с последующим сохранением при нажатии кнопки Ok.
+
+</details>
+
+<details>
+<summary>3. Менеджер фото — необязательная задача.</summary>
+
+# Менеджер фото
+
+Вы решили модернизировать один из старых проектов и переписать его в виде React-компонентов:
+
+![Менеджер фото](./assets/image.png)
+
+## Интерфейс Менеджера фото
+
+При клике на области «Click to select» должно появляться стандартное окно выбора файлов операционной системы, в котором пользователь может выбрать один или несколько файлов изображений (image/*).
+
+После выбора файлов они автоматически загружаются и отображаются в виде preview фиксированного размера (нижний блок). Для отображения используйте DataURL. Новые файлы должны добавляться, а не заменять предыдущие.
+
+При клике на крестик, изображение и все связанные с ним данные должны удаляться.
+
+Важно: Drag & Drop реализовывать не нужно.
+
+## Подсказки
+
+1. Разместите с помощью CSS блок "Click to select" над `<input type="file" />` и установите этому блоку `pointer-events: none;`, чтобы вызывать окошко выбора файлов при клике.
+1. Используйте следующую заготовку для получения DataUrl:
+```js
+const fileToDataUrl = file => {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+  
+    fileReader.addEventListener('load', evt => {
+      resolve(evt.currentTarget.result);
+    });
+    
+    fileReader.addEventListener('error', evt => {
+      reject(new Error(evt.currentTarget.error));
+    });
+    
+    fileReader.readAsDataURL(file);
+  });
+}
+
+const handleSelect = async (evt) => {
+    const files = [...evt.target.files];
+    const urls = await Promise.all(files.map(o => fileToDataUrl(o)));
+    // У вас в массиве - dataUrl, можете использовать в качестве значения атрибута src тега img
+}
+```
+
+</details>
+
+---
+
+</br>
+
+Все три задачи лучше сдавать в разных репозиториях, то есть через create-react-app реализовать три проекта, чтобы не
+было конфликта стилей. Но если вы позаботитесь о том, что конфликта не будет, то можете сдавать и в одном проекте.
+
+#### Альтернативный способ создания приложения React с использованием тулинга Vite
+
+Приложение также можно создать используя инструмент Vite.
+Документация по созданию приложения [React](https://vitejs.dev/guide/).
+
+1. Откройте терминал и пропишите следующую команду: `yarn create vite my-app --template react`,
+   либо `yarn create vite my-app --template react-ts`, если
+   нужен шаблон с TypeScript. Эта команда создаст настроенный
+   шаблонный проект.
+2. Откройте созданный проект в своей IDE.
+3. Установите зависимости.
+4. Готово. Чтобы запустить приложение, введите команду: `yarn dev`(либо `npm run dev`).
