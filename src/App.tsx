@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+// import React from 'react';
 import './App.css';
+import ConverterHexToRgb from './components/task1/ConverterHexToRgb/ConverterHexToRgb';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      {/* шапка */}
+      <header className='header'>
+          <h1>Домашнее задание Работа с формами</h1>
+          <h2>Задачи расположены последовательно в столбик</h2>
       </header>
-    </div>
+      
+      {/* Компонент задачи №1 */}
+      <ConverterHexToRgb />
+
+      {/* Компонент задачи №2 */}
+
+      {/* Компонент задачи №3 */}
+      
+      {/* Просто подвал */}
+      <footer className='footer'><p>Просто подвал</p></footer>
+    </>
   );
 }
 
