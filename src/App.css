@@ -12,7 +12,7 @@ html {
   font-family: 'Jost', sans-serif;
   height: 100%;
   overflow-x: hidden;
-  user-select: none;
+  /* user-select: none; */
 
   background: #f0fff0;
 }

@@ -1,6 +1,9 @@
 // import React from 'react';
 import './App.css';
 import ConverterHexToRgb from './components/task1/ConverterHexToRgb/ConverterHexToRgb';
+import TrainingTracker from './components/task2/TrainingTracker/TrainingTracker';
+
+document.documentElement.lang = 'en-US';
 
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
       <ConverterHexToRgb />
 
       {/* Компонент задачи №2 */}
+      <TrainingTracker />
 
       {/* Компонент задачи №3 */}
       
