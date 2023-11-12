@@ -2,6 +2,7 @@
 import './App.css';
 import ConverterHexToRgb from './components/task1/ConverterHexToRgb/ConverterHexToRgb';
 import TrainingTracker from './components/task2/TrainingTracker/TrainingTracker';
+import Gallery from './components/task3/Gallery/Gallery';
 
 document.documentElement.lang = 'en-US';
 
@@ -21,6 +22,7 @@ function App() {
       <TrainingTracker />
 
       {/* Компонент задачи №3 */}
+      <Gallery />
       
       {/* Просто подвал */}
       <footer className='footer'><p>Просто подвал</p></footer>
